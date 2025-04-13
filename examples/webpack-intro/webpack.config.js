@@ -2,6 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// Determine if we're in development or production mode
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 module.exports = {
   // Define the entry point(s) of your application
   // 'app' is the chunk name, entry.js is the starting file
@@ -14,8 +17,8 @@ module.exports = {
     // Use the chunk name from entry (app -> app.js)
     // [name] is replaced with the chunk name
     filename: "[name].js",
-    // Base path for all assets in your application
-    publicPath: '/'
+    // Use different publicPath for development and production
+    publicPath: path.join(__dirname, 'dist')
   },
 
   // Configure how different file types are processed
@@ -62,24 +65,21 @@ module.exports = {
 
   // Configure additional processing and optimizations
   plugins: [
-    // Define global constants available in your code
-    new webpack.DefinePlugin({ 
-      HELLO: JSON.stringify("hello"), // Makes HELLO available globally
-      // Set NODE_ENV, defaulting to 'development' if not set
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-    }),
-
     // Generate an HTML file with all your bundles included
     new HtmlWebpackPlugin({
       title: 'Webpack Example',    // Set the HTML title
-      template: './index.html'     // Use this HTML as a template
+      template: './index.html',     // Use this HTML as a template
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
     })
   ],
 
   // Configure how modules are resolved
   resolve: {
-    // Map module imports to different modules
-    // This replaces React with Preact's compatibility layer
+    extensions: ['.js', '.jsx'],
     alias: {
       'react': 'preact/compat',
       'react-dom': 'preact/compat'
