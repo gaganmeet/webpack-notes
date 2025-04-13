@@ -1,0 +1,23 @@
+{
+  "name": "webpack-intro-example",
+  "version": "1.0.0",
+  "description": "A simple example demonstrating webpack's bundling process",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development"
+  },
+  "dependencies": {
+    "preact": "^10.19.3",
+    "preact-render-to-string": "^6.0.2"
+  },
+  "devDependencies": {
+    "css-loader": "^6.10.0",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.4",
+    "swc-loader": "^0.2.3",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+} 
