@@ -6,7 +6,7 @@ A collection of notes and guides about Webpack, the popular JavaScript module bu
 
 ## Table of Contents
 
-1. [Introduction to Webpack](./Intro%20to%20Webpack.md)
+1. [Introduction to Webpack](./content/Intro%20to%20Webpack.md)
    - Learn the basics of Webpack and why it's essential for modern web development
 
 ## Contributing
@@ -15,4 +15,4 @@ Feel free to contribute by adding more notes, examples, or improvements to exist
 
 ## License
 
-This content is available under the MIT License. Feel free to use it for personal or commercial projects. 
+This content is available under the MIT License. Feel free to use it for personal or commercial projects.

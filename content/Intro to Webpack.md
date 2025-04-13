@@ -11,7 +11,7 @@ Webpack supports ES2015, CommonJS, MJS, and AMD module formats out of the box. P
 
 #### Webpack's execution process
 ***
-![9a2c470627b91ec9a4d48f3739fd5e5c.png](./_resources/9a2c470627b91ec9a4d48f3739fd5e5c.png)
+![9a2c470627b91ec9a4d48f3739fd5e5c.png](../_resources/9a2c470627b91ec9a4d48f3739fd5e5c.png)
 
 Webpack begins its work from **entries**. Often these are JS modules where webpack begins its traversal process. During this process, webpack evaluates entry matches against **loader** configurations that tell webpack how to transform each match.
 
